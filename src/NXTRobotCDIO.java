@@ -54,8 +54,15 @@ public class NXTRobotCDIO {
 				}
 				String commands = new String(bytes);
 				
-				motorA = Integer.parseInt(commands.substring(0, 3));
-				motorB = Integer.parseInt(commands.substring(3, 6));
+				try {
+					motorA = Integer.parseInt(commands.substring(0, 3));
+					motorB = Integer.parseInt(commands.substring(3, 6));
+				} catch (IllegalArgumentException e1) {
+					LCD.scroll();
+					LCD.scroll();
+					LCD.scroll();
+					LCD.drawString("Error: Could not parse", 0, 0);
+				}
 				
 				try{
 					LCD.drawString("Val A: " + motorA, 0, 1);
