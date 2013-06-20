@@ -61,7 +61,8 @@ public class NXTRobotCDIO {
 					LCD.scroll();
 					LCD.scroll();
 					LCD.scroll();
-					LCD.drawString("Error: Could not parse", 0, 0);
+					LCD.drawString("Error: ", 0, 0);
+					LCD.drawString("Could not parse", 0, 1);
 				}
 				
 				try{
